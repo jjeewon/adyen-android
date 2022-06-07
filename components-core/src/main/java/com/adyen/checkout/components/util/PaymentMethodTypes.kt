@@ -99,7 +99,11 @@ object PaymentMethodTypes {
             SCHEME,
             BLIK,
             WECHAT_PAY_SDK,
-            PIX
+            PIX,
+            ECONTEXT_SEVEN_ELEVEN,
+            ECONTEXT_ATM,
+            ECONTEXT_STORES,
+            ECONTEXT_ONLINE,
         )
     )
     val SUPPORTED_ACTION_ONLY_PAYMENT_METHODS: List<String> = Collections.unmodifiableList(
@@ -140,10 +144,6 @@ object PaymentMethodTypes {
             DRAGONPAY_OTC_BANKING,
             DRAGONPAY_OTC_NON_BANKING,
             DRAGONPAY_OTC_PHILIPPINES,
-            ECONTEXT_SEVEN_ELEVEN,
-            ECONTEXT_ATM,
-            ECONTEXT_STORES,
-            ECONTEXT_ONLINE
         )
     )
 }
