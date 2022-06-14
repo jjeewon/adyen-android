@@ -13,6 +13,6 @@ import com.adyen.checkout.components.base.InputData
 data class EContextInputData(
     var firstName: String = "",
     var lastName: String = "",
-    var phoneNumber: String = "",
+    var mobileNumber: String = "",
     var emailAddress: String = ""
 ) : InputData

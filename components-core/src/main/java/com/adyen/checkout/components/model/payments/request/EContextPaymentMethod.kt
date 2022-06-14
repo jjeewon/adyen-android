@@ -9,5 +9,15 @@
 package com.adyen.checkout.components.model.payments.request
 
 abstract class EContextPaymentMethod : PaymentMethodDetails() {
-    // TODO fields
+    abstract var firstName: String?
+    abstract var lastName: String?
+    abstract var telephoneNumber: String?
+    abstract var shopperEmail: String?
+
+    companion object {
+        const val FIRST_NAME = "firstName"
+        const val LAST_NAME = "lastName"
+        const val TELEPHONE_NUMBER = "telephoneNumber"
+        const val SHOPPER_EMAIL = "shopperEmail"
+    }
 }
