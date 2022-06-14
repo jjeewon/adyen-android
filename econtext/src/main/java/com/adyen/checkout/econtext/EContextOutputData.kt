@@ -9,8 +9,17 @@
 package com.adyen.checkout.econtext
 
 import com.adyen.checkout.components.base.OutputData
+import com.adyen.checkout.components.ui.FieldState
 
-class EContextOutputData : OutputData {
+data class EContextOutputData(
+    val firstNameState: FieldState<String>,
+    val lastNameState: FieldState<String>,
+    val phoneNumberState: FieldState<String>,
+    val emailAddressState: FieldState<String>
+) : OutputData {
     override val isValid: Boolean
-        get() = TODO("Not yet implemented")
+        get() = firstNameState.validation.isValid() &&
+            lastNameState.validation.isValid() &&
+            phoneNumberState.validation.isValid() &&
+            emailAddressState.validation.isValid()
 }

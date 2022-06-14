@@ -10,7 +10,6 @@ package com.adyen.checkout.econtext
 
 import android.content.Context
 import android.os.Parcel
-import android.os.Parcelable
 import com.adyen.checkout.components.base.BaseConfigurationBuilder
 import com.adyen.checkout.components.base.Configuration
 import com.adyen.checkout.core.api.Environment

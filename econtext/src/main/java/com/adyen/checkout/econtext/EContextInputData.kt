@@ -10,6 +10,9 @@ package com.adyen.checkout.econtext
 
 import com.adyen.checkout.components.base.InputData
 
-class EContextInputData : InputData {
-    // TODO
-}
+data class EContextInputData(
+    var firstName: String = "",
+    var lastName: String = "",
+    var phoneNumber: String = "",
+    var emailAddress: String = ""
+) : InputData
