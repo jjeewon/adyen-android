@@ -1,4 +1,12 @@
 /*
+ * Copyright (c) 2022 Adyen N.V.
+ *
+ * This file is open source and available under the MIT license. See the LICENSE file for more info.
+ *
+ * Created by ozgur on 14/6/2022.
+ */
+
+/*
  * Copyright (c) 2020 Adyen N.V.
  *
  * This file is open source and available under the MIT license. See the LICENSE file for more info.
@@ -6,7 +14,7 @@
  * Created by josephj on 16/12/2020.
  */
 
-package com.adyen.checkout.mbway.country
+package com.adyen.checkout.components.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -15,7 +23,7 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.Filter
 import android.widget.Filterable
-import com.adyen.checkout.mbway.R
+import com.adyen.checkout.components.ui.R
 
 // We need context to inflate the views and localizedContext to fetch the strings
 class CountryAdapter(private val context: Context, private val localizedContext: Context) : BaseAdapter(), Filterable {

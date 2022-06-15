@@ -26,8 +26,8 @@ import com.adyen.checkout.components.util.CountryUtils
 import com.adyen.checkout.core.exception.CheckoutException
 import com.adyen.checkout.core.log.LogUtil
 import com.adyen.checkout.core.log.Logger
-import com.adyen.checkout.mbway.country.CountryAdapter
-import com.adyen.checkout.mbway.country.CountryModel
+import com.adyen.checkout.components.ui.adapter.CountryAdapter
+import com.adyen.checkout.components.ui.adapter.CountryModel
 import com.google.android.material.textfield.TextInputLayout
 import java.util.Locale
 

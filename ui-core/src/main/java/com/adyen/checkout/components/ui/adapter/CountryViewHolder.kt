@@ -1,4 +1,12 @@
 /*
+ * Copyright (c) 2022 Adyen N.V.
+ *
+ * This file is open source and available under the MIT license. See the LICENSE file for more info.
+ *
+ * Created by ozgur on 14/6/2022.
+ */
+
+/*
  * Copyright (c) 2020 Adyen N.V.
  *
  * This file is open source and available under the MIT license. See the LICENSE file for more info.
@@ -6,12 +14,12 @@
  * Created by josephj on 16/12/2020.
  */
 
-package com.adyen.checkout.mbway.country
+package com.adyen.checkout.components.ui.adapter
 
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.adyen.checkout.mbway.R
+import com.adyen.checkout.components.ui.R
 
 class CountryViewHolder(private val rootView: View) : RecyclerView.ViewHolder(rootView) {
     private val flagTextView: TextView = rootView.findViewById(R.id.textView_flag)
