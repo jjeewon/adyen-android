@@ -144,6 +144,10 @@ class MainActivity : AppCompatActivity(), DropInCallback {
                 val intent = Intent(this, BlikActivity::class.java)
                 startActivity(intent)
             }
+            is MainNavigation.MyDropIn -> {
+                val intent = Intent(this, ExampleDropInActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 

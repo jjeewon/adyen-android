@@ -9,6 +9,7 @@ internal object ComponentItemProvider {
         ComponentItem.Entry.DropIn,
         ComponentItem.Entry.DropInWithSession,
         ComponentItem.Entry.DropInWithCustomSession,
+        ComponentItem.Entry.MyDropIn,
         ComponentItem.Title(R.string.components_title),
         ComponentItem.Entry.Card,
         ComponentItem.Entry.Blik,

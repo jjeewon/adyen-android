@@ -38,6 +38,11 @@
         <activity
             android:name=".ui.blik.BlikActivity"
             android:exported="true"
+            android:launchMode="singleTop"/>
+
+        <activity
+            android:name=".ui.main.ExampleDropInActivity"
+            android:exported="true"
             android:launchMode="singleTop">
 
         </activity>
@@ -78,6 +83,10 @@
             android:exported="false" />
         <service
             android:name=".service.ExampleSessionsDropInService"
+            android:exported="false" />
+
+        <service
+            android:name=".service.MyAsyncDropInService"
             android:exported="false" />
     </application>
 

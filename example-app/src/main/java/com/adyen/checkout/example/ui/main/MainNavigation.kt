@@ -29,4 +29,6 @@ internal sealed class MainNavigation {
         val checkoutSession: CheckoutSession,
         val dropInConfiguration: DropInConfiguration
     ) : MainNavigation()
+
+    object MyDropIn : MainNavigation()
 }

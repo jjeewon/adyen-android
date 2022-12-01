@@ -15,5 +15,6 @@ internal sealed class ComponentItem {
         object DropInWithCustomSession : Entry(R.string.drop_in_with_session_custom_entry)
         object Card : Entry(R.string.card_component_entry)
         object Blik : Entry(R.string.blik_component_entry)
+        object MyDropIn : Entry(R.string.drop_in_title)
     }
 }
