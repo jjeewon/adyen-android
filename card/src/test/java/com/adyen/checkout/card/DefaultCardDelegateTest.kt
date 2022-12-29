@@ -153,12 +153,13 @@ internal class DefaultCardDelegateTest(
         }
 
         @Test
-        fun `address configuration is full address, then countries and states should be emitted`() = runTest {
+        fun `address configuration is full address with default country, then countries and states should be emitted`() = runTest {
             val countriesFlow = addressRepository.countriesFlow.testIn(this)
             val statesFlow = addressRepository.statesFlow.testIn(this)
+
             delegate = createCardDelegate(
                 configuration = getDefaultCardConfigurationBuilder()
-                    .setAddressConfiguration(AddressConfiguration.FullAddress())
+                    .setAddressConfiguration(AddressConfiguration.FullAddress(defaultCountryCode = "NL"))
                     .build()
             )
             delegate.initialize(CoroutineScope(UnconfinedTestDispatcher()))
@@ -171,9 +172,29 @@ internal class DefaultCardDelegateTest(
         }
 
         @Test
+        fun `address configuration is full address without default country, then only countries should be emitted`() = runTest {
+            val countriesFlow = addressRepository.countriesFlow.testIn(this)
+            val statesFlow = addressRepository.statesFlow.testIn(this)
+
+            delegate = createCardDelegate(
+                configuration = getDefaultCardConfigurationBuilder()
+                    .setAddressConfiguration(AddressConfiguration.FullAddress())
+                    .build()
+            )
+            delegate.initialize(CoroutineScope(UnconfinedTestDispatcher()))
+
+            assertEquals(TestAddressRepository.COUNTRIES, countriesFlow.awaitItem())
+            assertEquals(Unit, statesFlow.expectNoEvents())
+
+            countriesFlow.cancelAndIgnoreRemainingEvents()
+            statesFlow.cancelAndIgnoreRemainingEvents()
+        }
+
+        @Test
         fun `When the address is changed, addressOutputDataFlow should be notified with the same data`() = runTest {
             val addressConfiguration = AddressConfiguration.FullAddress()
             val countryOptions = AddressFormUtils.initializeCountryOptions(
+                shopperLocale = delegate.componentParams.shopperLocale,
                 addressConfiguration = addressConfiguration,
                 countryList = TestAddressRepository.COUNTRIES
             )
@@ -516,6 +537,7 @@ internal class DefaultCardDelegateTest(
                 }
 
                 val countryOptions = AddressFormUtils.initializeCountryOptions(
+                    shopperLocale = delegate.componentParams.shopperLocale,
                     addressConfiguration = addressConfiguration,
                     countryList = TestAddressRepository.COUNTRIES
                 )

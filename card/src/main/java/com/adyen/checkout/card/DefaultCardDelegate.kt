@@ -226,6 +226,7 @@ internal class DefaultCardDelegate(
             .onEach { countries ->
                 Logger.d(TAG, "New countries emitted - countries: ${countries.size}")
                 val countryOptions = AddressFormUtils.initializeCountryOptions(
+                    shopperLocale = componentParams.shopperLocale,
                     addressConfiguration = componentParams.addressConfiguration,
                     countryList = countries
                 )
